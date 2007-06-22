@@ -2,8 +2,8 @@
 %define name	perl-%{module}
 %define	modprefix version
 
-%define	realversion 0.68
-%define version	0.68
+%define	realversion 0.7203
+%define version	0.7203
 %define release	%mkrel 1
 
 Name:		%{name}
@@ -13,9 +13,9 @@ Summary:	Perl extension for Version Objects
 License:	GPL or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{module}/
-Source:		http://search.cpan.org/CPAN/authors/id/J/JP/JPEACOCK/%{module}-%{realversion}.tar.bz2
+Source:		http://search.cpan.org/CPAN/authors/id/J/JP/JPEACOCK/%{module}-%{realversion}.tar.gz
 BuildRequires:	perl-devel
-BuildRequires:	perl(ExtUtils::CBuilder)
+#BuildRequires:	perl(ExtUtils::CBuilder)
 BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(Test::More)
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -29,18 +29,18 @@ except automatic version object creation.
 %setup -q -n %{module}-%{realversion}
 
 %build
-%{__perl} Build.PL installdirs=vendor
-./Build
+%__perl Makefile.PL INSTALLDIRS=vendor
+%make
 
 %check
-./Build test
+%__make test
 
 %clean 
 rm -rf %{buildroot}
 
 %install
 rm -rf %{buildroot}
-./Build install destdir=%{buildroot}
+%makeinstall_std
 
 %files
 %defattr(-,root,root)
