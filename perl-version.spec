@@ -3,7 +3,7 @@
 %define	modprefix version
 
 %define	realversion 0.7203
-%define version	0.7300
+%define version	0.7400
 %define release	%mkrel 1
 
 Name:		%{name}
