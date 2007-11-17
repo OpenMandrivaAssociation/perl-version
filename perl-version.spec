@@ -7,7 +7,7 @@
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-Epoch:      0
+Epoch:      1
 Summary:	Perl extension for Version Objects
 License:	GPL or Artistic
 Group:		Development/Perl
