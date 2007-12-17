@@ -17,7 +17,6 @@ BuildRequires:	perl-devel
 #BuildRequires:	perl(ExtUtils::CBuilder)
 BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(Test::More)
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Overloaded version objects for all versions of Perl. This module implements
