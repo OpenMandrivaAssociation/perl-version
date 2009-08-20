@@ -1,23 +1,22 @@
-%define module	version
-%define name	perl-%{module}
-%define	modprefix version
-%define version	0.76
-%define release	%mkrel 1
+%define upstream_name	 version
+%define upstream_version 0.7701
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 Epoch:      1
+
 Summary:	Perl extension for Version Objects
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{module}/
-Source:		http://search.cpan.org/CPAN/authors/id/J/JP/JPEACOCK/%{module}-%{version}.tar.gz
-BuildRequires:	perl-devel
-#BuildRequires:	perl(ExtUtils::CBuilder)
+Url:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:	http://search.cpan.org/CPAN/authors/id/J/JP/JPEACOCK/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(Test::More)
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRequires:	perl-devel
+
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Overloaded version objects for all versions of Perl. This module implements
@@ -25,7 +24,7 @@ all of the features of version objects which will be part of Perl 5.10.0
 except automatic version object creation.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
@@ -44,9 +43,6 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc Changes README
-%{perl_vendorarch}/%{modprefix}*
-%{perl_vendorarch}/auto/%{modprefix}
+%{perl_vendorarch}/version*
+%{perl_vendorarch}/auto/version
 %{_mandir}/*/*
-
-
-
