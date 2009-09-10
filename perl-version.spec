@@ -1,9 +1,9 @@
 %define upstream_name	 version
-%define upstream_version 0.7701
+%define upstream_version 0.7702
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 Epoch:      1
 
 Summary:	Perl extension for Version Objects
