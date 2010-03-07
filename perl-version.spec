@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 Epoch:      1
 
 Summary:	Perl extension for Version Objects
@@ -18,6 +18,8 @@ BuildRequires:	perl-devel
 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
+Provides:   perl(version) = %{version}
+
 %description
 Overloaded version objects for all versions of Perl. This module implements
 all of the features of version objects which will be part of Perl 5.10.0
@@ -31,7 +33,7 @@ except automatic version object creation.
 %make
 
 %check
-%__make test
+%make test
 
 %clean 
 rm -rf %{buildroot}
