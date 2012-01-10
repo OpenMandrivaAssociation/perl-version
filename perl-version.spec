@@ -1,9 +1,9 @@
 %define upstream_name	 version
-%define upstream_version 0.88
+%define upstream_version 0.95
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    1
 Epoch:      1
 
 Summary:	Perl extension for Version Objects
@@ -15,8 +15,6 @@ Source0:	http://search.cpan.org/CPAN/authors/id/J/JP/JPEACOCK/%{upstream_name}-%
 BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl-devel
-
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 Provides:   perl(version) = %{epoch}:%{version}
 
@@ -35,15 +33,10 @@ except automatic version object creation.
 %check
 %make test
 
-%clean 
-rm -rf %{buildroot}
-
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 %files
-%defattr(-,root,root)
 %doc Changes README
 %{perl_vendorarch}/version*
 %{perl_vendorarch}/auto/version
