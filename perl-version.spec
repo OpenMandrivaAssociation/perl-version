@@ -1,5 +1,5 @@
 %define modname	version
-%define modver 0.9904
+%define modver 0.9908
 
 Summary:	Perl extension for Version Objects
 Name:		perl-%{modname}
@@ -9,7 +9,7 @@ Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}/
-Source0:	http://www.cpan.org/authors/id/J/JP/JPEACOCK/version-%{modver}.tar.gz
+Source0:	http://search.cpan.org/CPAN/authors/id/J/JP/JPEACOCK/version-%{modver}.tar.gz
 BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl-devel
@@ -38,5 +38,6 @@ except automatic version object creation.
 %{perl_vendorarch}/version*
 %{perl_vendorarch}/auto/version
 %{_mandir}/man3/*
+
 
 
