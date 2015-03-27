@@ -2,5 +2,6 @@ removed_sources:
   version-0.95.tar.gz: 4fae3d19d03d7aefac6234178cf97d92a47920b3
   version-0.9904.tar.gz: 180137e83b6177542a67bb539ed167ce8bc67685
   version-0.9908.tar.gz: e4514048db90dcb56a8b5a9a58ae552e8880edb7
-sources:
   version-0.9909.tar.gz: 8687160ea132979a86fe73b3b447137c71b97a94
+sources:
+  version-0.9912.tar.gz: cd1262925944bbb465ae1140c920a8f960f286de

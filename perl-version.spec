@@ -1,11 +1,11 @@
 %define modname	version
-%define modver 0.9909
+%define modver 0.9912
 
 Summary:	Perl extension for Version Objects
 Name:		perl-%{modname}
 Epoch:		1
 Version:	%perl_convert_version %{modver}
-Release:	4
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}/
@@ -24,7 +24,7 @@ except automatic version object creation.
 %setup -qn %{modname}-%{modver}
 
 %build
-%__perl Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
